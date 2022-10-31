@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+
+}
+
+.centrar{
+    display: flex;
+    margin: 2vw;
+    justify-content: space-around;
+}
+form{
+    margin: 2vw;
+}
