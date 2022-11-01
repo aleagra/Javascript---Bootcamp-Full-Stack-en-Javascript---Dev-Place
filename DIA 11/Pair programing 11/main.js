@@ -1,3 +1,4 @@
+
 const cargarPost = async () => {
   try {
     const url = "https://jsonplaceholder.typicode.com/posts";
@@ -14,14 +15,14 @@ const cargarPost = async () => {
         columna.classList.add("col-3", "p-3");
         let card = document.createElement("div");
         card.classList.add("card", "p-1");
-        let cardBody = document.createElement("div");   
+        let cardBody = document.createElement("div");
         cardBody.classList.add("card-body");
         let p = document.createElement("h5");
         p.classList.add("card-title");
         p.innerHTML = texto;
         let botonCrear = document.createElement("button");
-        botonCrear.setAttribute("onclick", "cargarComentarios(" + id + ")");
-        botonCrear.classList.add("btn-primary", "btn");
+        botonCrear.setAttribute("onclick", "cargarComentarios(" + id +",'"+ texto +"')");
+        botonCrear.classList.add("btn-dark", "btn");
         botonCrear.textContent = "Comentarios";
         botonCrear.setAttribute("type", "button");
         botonCrear.setAttribute("data-bs-toggle", "modal");
@@ -48,15 +49,14 @@ const cargarPost = async () => {
 };
 
 cargarPost();
-
-const cargarComentarios = async (id) => {
+const cargarComentarios = async (id, titulo) => {
   try {
+    document.getElementById("aux").innerHTML= titulo;
     const urlcomments =
       "https://jsonplaceholder.typicode.com/posts/" + id + "/comments";
     const respuesta = await fetch(urlcomments);
     if (respuesta.ok) {
       const datos = await respuesta.json();
-      cargarPost();
       const comentarios = document.getElementById("comments");
       comentarios.innerHTML = "";
       datos.forEach((element) => {
