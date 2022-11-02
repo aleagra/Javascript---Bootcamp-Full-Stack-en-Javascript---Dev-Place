@@ -4,7 +4,7 @@ var palabras = [
   ["Tramontina", "Marca de cuchillo que todos tienen"],
   ["Coliseo", "se celebraban espectaculos romanos"],
   ["Everest", "Nombre de la montaña mas grande"],
-  ["Duglas","Momentico time"],
+  ["Duglas","Profe de la tarde"],
 ];
 var palabra = "";
 var random;
