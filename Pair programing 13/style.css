@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Poor+Story&display=swap');
+*{
+    margin: 0;
+    padding: auto;
+    box-sizing: border-box;
+    font-family: 'Poor Story', cursive;
+}
+body{
+  background-color: #84b6f4!important;
+}
+h1{
+
+  text-align: center;
+}
+h3{
+  text-align: center;
+  color:red;
+}
+h4{
+  text-align: center;
+}
+
+button{
+  color: white!important;
+}
+.btn{
+  margin:3px;
+}
+.container-button{
+  display: flex;
+  margin: 2em;
+  justify-content: center;
+}
+#hueco-pista{
+    display: flex;
+    justify-content: center;
+    font-size: 1.3em;
+}
+h2{
+  text-align: center;
+}
+#abcdario{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    justify-content: center;
+}
+.win{
+    text-transform: uppercase;
+    color: rgb(42, 85, 42);
+}
+.lose{
+  color: red;
+}

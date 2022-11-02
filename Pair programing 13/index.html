@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+   
+    <div class="container">
+        <div>
+            <h3 id="acierto"></h3>
+            <h2 id="msg-final"></h2>
+            <h2 id="palabra"></h2>
+        </div>
+        <div>
+            <h4>Intentos restantes: <span id="intentos">3</span></h4>
+        </div> 
+        <div class="container-button">
+            <button id="palabra" class="btn btn-danger" onclick="inicio()">volver a jugar</button>
+            <button id="pista" class="btn btn-warning" onclick="pista()">pista</button>
+            
+        </div>
+        <div>
+            <span id="hueco-pista"></span>
+        </div>
+        <div id="abcdario"></div>
+    </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
