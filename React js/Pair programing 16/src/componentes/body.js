@@ -1,7 +1,6 @@
 import React from 'react'
 import  jordan from './jordan1.webp'
 
-
 export function Body() {
     return(
         <>
