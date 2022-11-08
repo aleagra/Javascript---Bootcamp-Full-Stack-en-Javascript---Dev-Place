@@ -1,27 +1,38 @@
 import React from 'react'
-import Nav from 'react-bootstrap/Nav'
 import "bootstrap/dist/css/bootstrap.min.css"
+import Tab from 'react-bootstrap/Tab';
+import Tabs from 'react-bootstrap/Tabs';
+import  {Padre}  from './hijo' 
+import  {GroupExample}  from './body' 
+import { Tablets } from './tablets';
+import { Celulares } from './celulares';
 
 
 export function JustifiedExample() {
     return(
         <>
-    <Nav justify variant="tabs" defaultActiveKey="/home">
-      <Nav.Item>
-        <Nav.Link href="/home">Inicio</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-1">Challenge 17</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-        <Nav.Link eventKey="link-2">Contactanos</Nav.Link>
-      </Nav.Item>
-      <Nav.Item>
-      <Nav.Item>
-        <Nav.Link href="/home">Iniciar sesion</Nav.Link>
-      </Nav.Item>
-      </Nav.Item>
-    </Nav>
+      <Tabs
+      defaultActiveKey="profile"
+      id="justify-tab-example"
+      className="mb-3"
+      justify
+    >
+      <Tab eventKey="home" title="Home">
+        <Padre  />
+      </Tab>
+      <Tab eventKey="Televisores" title="Televisores  ">
+        <GroupExample/>
+      </Tab>
+      <Tab eventKey="Celulares" title="Celulares">
+        <Tablets />
+      </Tab>
+  
+      <Tab eventKey="contact" title="Tablets" >
+        <Celulares />
+      </Tab>
+    </Tabs>
+
+  
   </>
   );
 }

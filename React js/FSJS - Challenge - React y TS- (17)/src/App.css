@@ -42,10 +42,15 @@
 }
 
 footer {
-  border: 1px solid rgba(0, 0, 0, 0.175);
+  position: fixed;
+  left: 0;
   bottom: 0;
   width: 100%;
-  margin-top: 3rem;
+  color: white;
+  text-align: center;
+  border: 1px solid rgba(0, 0, 0, 0.175);
+
+
  
 }
 
@@ -78,4 +83,13 @@ h2 {
 h3 {
   text-align: center;
   margin-bottom: 3rem;
+}
+.fecha{
+  display: flex;
+  margin: auto;
+}
+.hora{
+  text-align: center;
+  font-size: 1.5rem;
+
 }
