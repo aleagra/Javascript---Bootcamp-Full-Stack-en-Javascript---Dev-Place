@@ -5,7 +5,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 export function Footer() {
   return (
     <>
-    <footer>
+
        
        <div className="container-footer">
            <a className="text-footer" href="index.html">Inicio</a> 
@@ -13,7 +13,7 @@ export function Footer() {
            <a className="text-footer" href="a">Linkedin</a>
            <a className="text-footer" href="a">Instagram</a>                                                                                                             
        </div>
-   </footer>
+  
     </>
   );
 }
