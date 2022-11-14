@@ -6,9 +6,11 @@ import Navbar from "react-bootstrap/Navbar";
 import nike from "./img/nike.png";
 import Form from "react-bootstrap/Form";
 import carrito from "./img/carrito.png";
-
-export function JustifiedExample() {
+import Badge from 'react-bootstrap/Badge';
+import Button from 'react-bootstrap/Button';
+export function Appbar() {
   return (
+    
     <>
       <Navbar
         collapseOnSelect
@@ -21,8 +23,8 @@ export function JustifiedExample() {
           <Navbar.Brand href="#home"></Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link className="li-logo" href="#features">
+            <Nav >
+              <Nav.Link className="li-logo" href="/">
                 <img className="logo" src={nike} alt="" />
               </Nav.Link>
             </Nav>
@@ -32,15 +34,19 @@ export function JustifiedExample() {
                 placeholder="BUSCAR PRODUCTOS "
                 className="me-2"
                 aria-label="Search"
-              />
+            />
+          
             </Form>
             <Nav>
-              <Nav.Link eventKey={2} href="#memes">
+              <Nav.Link className="login" eventKey={2} href="/iniciar Sesion    ">
                 Iniciar sesion
               </Nav.Link>
             </Nav>
             <Nav.Link className="li-logo" href="#features">
-              <img className="carrito" src={carrito} alt="" />
+            <Button className="carrito-button">
+             <Badge className="badge" ><img className="carrito" src={carrito} alt="" />1</Badge>
+           </Button>
+           
             </Nav.Link>
           </Navbar.Collapse>
         </Container>

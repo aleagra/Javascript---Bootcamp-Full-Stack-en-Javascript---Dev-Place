@@ -1,11 +1,10 @@
 import React from "react";
-
 export function General() {
   return (
     <div>
       <div className="general">
         <div className="container-text">
-          <h1 className="title">2.MARCA/GENERAL</h1>
+          <h1 className="title">General</h1>
           <p className="text">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim non
             fugit accusantium deserunt totam ipsa at omnis esse autem ducimus
@@ -20,8 +19,9 @@ export function General() {
           </p>
         </div>
         <img
-          src="https://images.samsung.com/is/image/samsung/p6pim/ar/qn65q80aagczb/gallery/ar-qled-tv-qn65q80aagczb-front-silver-531921679?$1300_1038_PNG$"
+          src="https://media.flixcar.com/f360cdn/Samsung-110230030-ar-feature--533370431--ORIGIN_IMG-.jpg"
           alt=""
+          className="general-img"
         />
       </div>
     </div>
