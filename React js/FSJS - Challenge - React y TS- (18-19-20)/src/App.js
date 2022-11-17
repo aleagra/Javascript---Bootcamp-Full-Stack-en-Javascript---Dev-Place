@@ -11,24 +11,37 @@ import { Tablets } from "./componentes/pages/Tablets";
 import { Televisores } from "./componentes/pages/Televisores";
 import { Todoslosproductos } from "./componentes/pages/todoproductos";
 import { Sesion } from "./componentes/pages/sesion";
+import { React, createContext } from "react";
+import Carrito from "./componentes/pages/Carrito";
+import { CartProvider } from "react-use-cart";
+export const contexto = createContext();
 
 function App() {
+
   return (
     <>
+    <CartProvider>
       <Appbar />
       <Categoria />
       <BrowserRouter>
-        <Routes>
-          <Route path="/todoslosproductos" element={<Todoslosproductos />} />
-          <Route path="/Celulares" element={<Celulares />} />
-          <Route path="/Tablets" element={<Tablets />} />
-          <Route path="/Televisores" element={<Televisores />} />
-          <Route path="/" element={<Homepage />} />
-          <Route path="/General" element={<General />} />
-          <Route path="/Iniciar Sesion" element={<Sesion />} />
-        </Routes>
+        <contexto.Provider>
+          <Routes>  
+            <Route
+              path="/todoslosproductos"
+              element={<Todoslosproductos />}
+            />
+            <Route path="/Celulares" element={<Celulares />} />
+            <Route path="/Tablets" element={<Tablets />} />
+            <Route path="/Televisores" element={<Televisores />} />
+            <Route path="/" element={<Homepage />} />
+            <Route path="/General" element={<General />} />
+            <Route path="/Iniciar Sesion" element={<Sesion />} />
+            <Route path="/Carrito" element={<Carrito />} />
+          </Routes>
+          <Footer />
+        </contexto.Provider>
       </BrowserRouter>
-      <Footer />
+      </CartProvider>
     </>
   );
 }

@@ -7,6 +7,7 @@ let listaCelulares =[
       price: "$200.000",
       img: "https://images.samsung.com/is/image/samsung/p6pim/ar/2208/gallery/ar-galaxy-z-fold4-f936-429925-sm-f936bzamaro-thumb-533083370?$160_160_PNG$",
       procuto: "celular",
+  
   },
   {
       id: 2,

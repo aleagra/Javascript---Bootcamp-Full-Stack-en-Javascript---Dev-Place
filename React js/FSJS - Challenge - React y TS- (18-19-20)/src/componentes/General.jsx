@@ -1,29 +1,26 @@
 import React from "react";
 export function General() {
-  return (
-    <div>
-      <div className="general">
-        <div className="container-text">
-          <h1 className="title">General</h1>
-          <p className="text">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim non
-            fugit accusantium deserunt totam ipsa at omnis esse autem ducimus
-            nesciunt sit sed quia rem facere, corrupti possimus consequuntur
-            facilis! Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Accusamus numquam rerum assumenda dolores sit quis magni
-            praesentium, voluptatum similique aliquam vero iure veniam repellat,
-            in autem velit? Fuga, sint consequuntur. Lorem ipsum dolor sit amet
-            consectetur adipisicing elit. Atque consequatur eveniet fuga, labore
-            sunt nostrum aut cupiditate eius architecto dolor! Sed eius ipsam
-            pariatur, adipisci maiores nulla aut nihil ab.
-          </p>
-        </div>
-        <img
-          src="https://media.flixcar.com/f360cdn/Samsung-110230030-ar-feature--533370431--ORIGIN_IMG-.jpg"
-          alt=""
-          className="general-img"
-        />
-      </div>
-    </div>
+  return (<>
+   
+     <div>
+     <div className="general intento">
+     <div className="container-img">
+       <img
+         src="https://static.wixstatic.com/media/82fcd3_7b50ff02a3dd411fac2e6ced36f2aed0~mv2.png/v1/fill/w_488,h_267,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Model_Strip_Single.png"
+         alt=""
+         className="general-img"
+       />
+       </div>
+       <div className="container-text">
+         <h1 className="title">Music Like You've
+          Never Heard Before</h1>
+         <p className="text">
+         I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double click me to add your own content.
+         </p>
+         <button className="general-button">Comprar ahora</button>
+       </div>
+      
+     </div>
+   </div></>
   );
 }

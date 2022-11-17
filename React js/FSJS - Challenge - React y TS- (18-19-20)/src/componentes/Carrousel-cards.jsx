@@ -3,10 +3,10 @@ import CardGroup from "react-bootstrap/CardGroup";
 import Carousel from "react-bootstrap/Carousel";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import lista from "./data/datacarrousel";
-import { useState } from "react";
+import alldatos from "./data/alldatos";
+import { React, useState } from "react";
+import {useCart} from "react-use-cart";
 export function Cards() {
-  let array = lista;
 
   return (
     <>
@@ -15,11 +15,17 @@ export function Cards() {
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-                {array.map((Element) => (
-                  <Col lg={4} sm={6} xl={2}>
-                    <CrearCard Element={Element} />
-                  </Col>
-                ))}
+              {alldatos.map((Element) => {
+              if(Element.procuto === "carrousel")
+              {
+                return(
+                <Col lg={4} sm={6} xl={2}>
+                  <CrearCard Element={Element} />
+                </Col>                  
+                )
+
+              }
+})}
               </Row>
             </CardGroup>
           </Carousel.Item>
@@ -27,22 +33,34 @@ export function Cards() {
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-                {array.map((Element) => (
-                  <Col lg={4} sm={6} xl={2}>
-                    <CrearCard Element={Element} />
-                  </Col>
-                ))}
+              {alldatos.map((Element) => {
+              if(Element.procuto === "carrousel")
+              {
+                return(
+                <Col lg={4} sm={6} xl={2}>
+                  <CrearCard Element={Element} />
+                </Col>                  
+                )
+
+              }
+})}
               </Row>
             </CardGroup>
           </Carousel.Item>
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-                {array.map((Element) => (
-                  <Col lg={4} sm={6} xl={2}>
-                    <CrearCard Element={Element} />
-                  </Col>
-                ))}
+              {alldatos.map((Element) => {
+              if(Element.procuto === "carrousel")
+              {
+                return(
+                <Col lg={4} sm={6} xl={2}>
+                  <CrearCard Element={Element} />
+                </Col>                  
+                )
+
+              }
+})}
               </Row>
             </CardGroup>
           </Carousel.Item>
@@ -52,19 +70,23 @@ export function Cards() {
   );
 }
 
-function CrearCard(props) {
-  const [icon, setIcon] = useState("far fa-heart fav");
+export default function CrearCard(props) {
+ 
+  const [icon, setIcon] = useState("fas fa-cart-plus fav");
+  var contador = 0;
   function cambiarIcono(e) {
-    let contador = 0;
-    // eslint-disable-next-line eqeqeq
+    
     if (e.target.classList == "far fa-heart fav") {
-      setIcon("fas fa-heart fav");
+      setIcon("fas fa-cart-plus fav");
       contador = contador + 1;
     } else {
       setIcon("far fa-heart fav");
+      contador = contador - 1;
     }
     console.log(contador);
   }
+
+  const{addItem}=useCart();
   return (
     <>
       <Card className="text-center card col" key={props.Element.key}>
@@ -72,9 +94,13 @@ function CrearCard(props) {
         <Card.Body>
           <Card.Title> {props.Element.title}</Card.Title>
           <Card.Text>{props.Element.text}</Card.Text>
-          <Card.Title> {props.Element.price}</Card.Title>
+          <Card.Title className="price"> {props.Element.price}</Card.Title>
         </Card.Body>
-        <button className="fav-button" onClick={cambiarIcono}>
+        <button
+          className="fav-button"
+          onClick={(e) => {cambiarIcono(e);
+            addItem(props.Element)}}
+        >
           <i className={icon}></i>
         </button>
       </Card>

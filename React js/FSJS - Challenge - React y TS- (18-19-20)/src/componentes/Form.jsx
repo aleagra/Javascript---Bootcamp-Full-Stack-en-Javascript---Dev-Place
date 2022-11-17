@@ -1,6 +1,5 @@
 import React from "react";
 import { MDBInput, MDBCol, MDBRow } from "mdb-react-ui-kit";
-
 export function Form() {
   return (
     <>
@@ -44,10 +43,7 @@ export function Form() {
               </button>
               <button className="btn">
                 <i className="fab fa-twitter"></i>
-               
               </button>
-
-
             </div>
           </form>
         </div>

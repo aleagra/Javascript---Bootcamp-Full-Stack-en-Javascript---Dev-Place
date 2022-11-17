@@ -6,9 +6,10 @@ import Navbar from "react-bootstrap/Navbar";
 import nike from "./img/nike.png";
 import Form from "react-bootstrap/Form";
 import carrito from "./img/carrito.png";
-import Badge from 'react-bootstrap/Badge';
-import Button from 'react-bootstrap/Button';
+import Button from 'react-bootstrap/Button';          
+
 export function Appbar() {
+
   return (
     
     <>
@@ -43,9 +44,9 @@ export function Appbar() {
               </Nav.Link>
             </Nav>
             <Nav.Link className="li-logo" href="#features">
-            <Button className="carrito-button">
-             <Badge className="badge" ><img className="carrito" src={carrito} alt="" />1</Badge>
-           </Button>
+            <button className="carrito-button">
+             <Button className="btn" href="/Carrito" ><img className="carrito"  src={carrito} alt="" /> </Button>
+           </button>
            
             </Nav.Link>
           </Navbar.Collapse>

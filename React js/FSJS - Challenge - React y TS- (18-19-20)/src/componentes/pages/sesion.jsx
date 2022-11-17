@@ -1,7 +1,23 @@
-import React from "react";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
-
+import React, { useState, useRef } from "react";
 export function Sesion() {
+  const [enviarInfo1, setEnviarInput1] = useState();
+  const [enviarInfo2, setEnviarInput2] = useState();
+  const referenciaInput1 = useRef();
+  const referenciaInput2 = useRef();
+
+  function enviarDatosInput(e) {
+    e.preventDefault();
+    setEnviarInput1(referenciaInput1.current.value);
+    setEnviarInput2(referenciaInput2.current.value);
+  }
+  console.log(enviarInfo1, enviarInfo2);
+  const mostrar = () => {
+    if (enviarInfo1 && enviarInfo2) {
+      alert(enviarInfo1 + "\n" + enviarInfo2);
+    } else alert("Complete ambos campos");
+  };
+
   return (
     <>
       <section className="form center">
@@ -13,18 +29,30 @@ export function Sesion() {
             <MDBRow className="mb-3">
               <MDBCol>
                 <label className="form-label">NOMBRE DE USUARIO</label>
-                <input className="form-control" type="text" />
+                <input
+                  className="form-control"
+                  type="text"
+                  id="form-1"
+                  ref={referenciaInput2}
+                />
               </MDBCol>
             </MDBRow>
             <MDBRow className="mb-3 ">
               <MDBCol>
                 <label className="form-label">CONTRASEÑA</label>
-                <input className="form-control" type="text" />
+                <input
+                  className="form-control"
+                  type="text"
+                  ref={referenciaInput1}
+                />
               </MDBCol>
             </MDBRow>
 
             <div className="login">
-              <button className="btn session-btn">Enviar</button>
+              <button className="btn session-btn" onClick={enviarDatosInput}>
+                Enviar
+              </button>
+              <button onClick={mostrar}>mostrar</button>
             </div>
             <div className="text-center margin">
               <p>
