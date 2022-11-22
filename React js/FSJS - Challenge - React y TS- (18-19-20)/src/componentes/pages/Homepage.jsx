@@ -14,6 +14,7 @@ export function Homepage() {
       <Componentes />
       <Form />
       <Acordeon />
+      
     </>
   );
 }

@@ -3,12 +3,12 @@ export function Acordeon() {
   return (
     <>
       <section className="faq">
-        <div className="acordeon-title">
+        <div >
           <h1>PREGUNTAS FRECUENTES</h1>
         </div>
         <Accordion>
           <Accordion.Item eventKey="0">
-            <Accordion.Header className="acordeon-t">
+            <Accordion.Header className="accordion-title">
               <h2>Pregunta 1</h2>
             </Accordion.Header>
             <Accordion.Body>
@@ -22,7 +22,7 @@ export function Acordeon() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="1">
-            <Accordion.Header className="acordeon-t">
+            <Accordion.Header className="accordion-title">
               <h2>Pregunta 2</h2>
             </Accordion.Header>
             <Accordion.Body>
@@ -36,7 +36,7 @@ export function Acordeon() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="3">
-            <Accordion.Header className="acordeon-t">
+            <Accordion.Header className="accordion-title">
               <h2>Pregunta 3</h2>
             </Accordion.Header>
             <Accordion.Body>
@@ -50,7 +50,7 @@ export function Acordeon() {
             </Accordion.Body>
           </Accordion.Item>
           <Accordion.Item eventKey="4">
-            <Accordion.Header className="acordeon-t">
+            <Accordion.Header className="accordion-title">
               <h2>Pregunta 4</h2>
             </Accordion.Header>
             <Accordion.Body>

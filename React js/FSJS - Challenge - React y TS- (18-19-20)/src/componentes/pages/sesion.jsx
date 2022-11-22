@@ -22,7 +22,7 @@ export function Sesion() {
     <>
       <section className="form center">
         <div className="div-form sesion">
-          <div className="container-h1 session-h1">
+          <div className="container-h1 session-title">
             <h1>INICIAR SESION</h1>
           </div>
           <form className="formulario session">
@@ -32,7 +32,6 @@ export function Sesion() {
                 <input
                   className="form-control"
                   type="text"
-                  id="form-1"
                   ref={referenciaInput2}
                 />
               </MDBCol>
@@ -52,7 +51,7 @@ export function Sesion() {
               <button className="btn session-btn" onClick={enviarDatosInput}>
                 Enviar
               </button>
-              <button onClick={mostrar}>mostrar</button>
+              {/* <button onClick={mostrar}>mostrar</button> */}
             </div>
             <div className="text-center margin">
               <p>

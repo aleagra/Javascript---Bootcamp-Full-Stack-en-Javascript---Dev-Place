@@ -2,8 +2,8 @@ import React from "react";
 export function General() {
   return (<>
    
-     <div>
-     <div className="general intento">
+     
+     <div className="general">
      <div className="container-img">
        <img
          src="https://static.wixstatic.com/media/82fcd3_7b50ff02a3dd411fac2e6ced36f2aed0~mv2.png/v1/fill/w_488,h_267,al_c,q_85,usm_0.66_1.00_0.01,enc_auto/Model_Strip_Single.png"
@@ -21,6 +21,6 @@ export function General() {
        </div>
       
      </div>
-   </div></>
+   </>
   );
 }

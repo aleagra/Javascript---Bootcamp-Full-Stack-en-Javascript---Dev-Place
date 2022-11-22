@@ -5,9 +5,10 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import alldatos from "./data/alldatos";
 import { React, useState } from "react";
-import {useCart} from "react-use-cart";
+import { useCart } from "react-use-cart";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 export function Cards() {
-
   return (
     <>
       <section className="carrousel-card">
@@ -15,17 +16,15 @@ export function Cards() {
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-              {alldatos.map((Element) => {
-              if(Element.procuto === "carrousel")
-              {
-                return(
-                <Col lg={4} sm={6} xl={2}>
-                  <CrearCard Element={Element} />
-                </Col>                  
-                )
-
-              }
-})}
+                {alldatos.map((Element) => {
+                  if (Element.procuto === "carrousel") {
+                    return (
+                      <Col lg={4} sm={6} xl={2}>
+                        <CrearCard Element={Element} />
+                      </Col>
+                    );
+                  }
+                })}
               </Row>
             </CardGroup>
           </Carousel.Item>
@@ -33,34 +32,30 @@ export function Cards() {
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-              {alldatos.map((Element) => {
-              if(Element.procuto === "carrousel")
-              {
-                return(
-                <Col lg={4} sm={6} xl={2}>
-                  <CrearCard Element={Element} />
-                </Col>                  
-                )
-
-              }
-})}
+                {alldatos.map((Element) => {
+                  if (Element.procuto === "carrousel") {
+                    return (
+                      <Col lg={4} sm={6} xl={2}>
+                        <CrearCard Element={Element} />
+                      </Col>
+                    );
+                  }
+                })}
               </Row>
             </CardGroup>
           </Carousel.Item>
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
-              {alldatos.map((Element) => {
-              if(Element.procuto === "carrousel")
-              {
-                return(
-                <Col lg={4} sm={6} xl={2}>
-                  <CrearCard Element={Element} />
-                </Col>                  
-                )
-
-              }
-})}
+                {alldatos.map((Element) => {
+                  if (Element.procuto === "carrousel") {
+                    return (
+                      <Col sm={6} lg={4} xl={2}>
+                        <CrearCard Element={Element} />
+                      </Col>
+                    );
+                  }
+                })}
               </Row>
             </CardGroup>
           </Carousel.Item>
@@ -71,26 +66,45 @@ export function Cards() {
 }
 
 export default function CrearCard(props) {
- 
   const [icon, setIcon] = useState("fas fa-cart-plus fav");
   var contador = 0;
   function cambiarIcono(e) {
-    
-    if (e.target.classList == "far fa-heart fav") {
+    if (e.target.classList == "fas fa-check") {
       setIcon("fas fa-cart-plus fav");
+
       contador = contador + 1;
     } else {
-      setIcon("far fa-heart fav");
+      setIcon("fas fa-check");
+      alerta();
       contador = contador - 1;
     }
     console.log(contador);
   }
 
-  const{addItem}=useCart();
+  const { addItem } = useCart();
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-end",
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+    didOpen: (toast) => {
+      toast.addEventListener("mouseleave", Swal.resumeTimer);
+    },
+  });
+  function alerta() {
+    Toast.fire({
+      icon: "success",
+      title: "Agregado al carrito",
+    });
+  }
   return (
     <>
       <Card className="text-center card col" key={props.Element.key}>
-        <Card.Img src={props.Element.img} alt="logo" />
+        <a href={"/Detalles/" + props.Element.id}>
+          {" "}
+          <Card.Img src={props.Element.img} alt="logo" />
+        </a>
         <Card.Body>
           <Card.Title> {props.Element.title}</Card.Title>
           <Card.Text>{props.Element.text}</Card.Text>
@@ -98,8 +112,11 @@ export default function CrearCard(props) {
         </Card.Body>
         <button
           className="fav-button"
-          onClick={(e) => {cambiarIcono(e);
-            addItem(props.Element)}}
+          onClick={(e) => {
+            cambiarIcono(e);
+
+            addItem(props.Element);
+          }}
         >
           <i className={icon}></i>
         </button>

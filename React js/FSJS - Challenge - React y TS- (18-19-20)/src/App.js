@@ -14,17 +14,21 @@ import { Sesion } from "./componentes/pages/sesion";
 import { React, createContext } from "react";
 import Carrito from "./componentes/pages/Carrito";
 import { CartProvider } from "react-use-cart";
+import { Detalles } from "./componentes/detalles";
+import Search from "./componentes/pages/Search";
 export const contexto = createContext();
 
 function App() {
 
   return (
+    
     <>
+    <div className="app">
     <CartProvider>
       <Appbar />
       <Categoria />
       <BrowserRouter>
-        <contexto.Provider>
+     
           <Routes>  
             <Route
               path="/todoslosproductos"
@@ -37,11 +41,15 @@ function App() {
             <Route path="/General" element={<General />} />
             <Route path="/Iniciar Sesion" element={<Sesion />} />
             <Route path="/Carrito" element={<Carrito />} />
+            <Route path="/Detalles/:id" element={<Detalles/>} />
+            <Route path="/Search/:buscar" element={<Search/>} />
           </Routes>
           <Footer />
-        </contexto.Provider>
       </BrowserRouter>
       </CartProvider>
+    </div>
+    
+    
     </>
   );
 }
