@@ -84,13 +84,14 @@ export default function CrearCard(props) {
   const { addItem } = useCart();
   const Toast = Swal.mixin({
     toast: true,
-    position: "top-end",
+    position: "top-right",
+    iconColor: "white",
+    customClass: {
+      popup: "colored-toast",
+    },
     showConfirmButton: false,
     timer: 1500,
     timerProgressBar: true,
-    didOpen: (toast) => {
-      toast.addEventListener("mouseleave", Swal.resumeTimer);
-    },
   });
   function alerta() {
     Toast.fire({

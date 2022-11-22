@@ -439,6 +439,10 @@
   font-weight: bold !important;
 }
 
+.shop {
+  display: flex;
+  justify-content: end;
+}
 .shop h5 {
   font-size: 1.5rem;
   font-weight: bold;
@@ -458,11 +462,6 @@
   width: 100%;
   height: 100%;
 }
-.shop .container-img-shop {
-  width: 100%;
-  justify-content: center;
-  display: flex;
-}
 .shop .container-title-shop {
   margin: 1% 3% 1% 3%;
 }
@@ -470,27 +469,25 @@
   color: rgb(43, 52, 69);
   font-weight: bold;
 }
-.shop .shop-card-price {
-  color: rgb(125, 135, 156);
-}
-.shop .shop-amount {
-  color: #ff3547;
-  font-weight: 600;
-}
 .shop button {
   padding: 10px;
   margin: 4%;
   border-radius: 50px;
 }
-.shop .td-buttons {
-  display: flex;
-  justify-content: end;
-}
-.shop .td-buttons td {
+.shop td {
   font-size: 1rem;
 }
-.shop .td-buttons .shop-button button {
-  padding: 0 !important;
+
+.shop-buttos {
+  display: flex;
+  width: 100%;
+  margin-right: 1rem;
+  justify-content: center;
+}
+
+.shop-button {
+  padding: 5% !important;
+  background-color: #5a329d;
 }
 
 .shop-code {
@@ -502,17 +499,6 @@
   margin: 1%;
   height: 65vh;
 }
-.shop-code .container-shop-code {
-  padding: 7%;
-  width: 100%;
-}
-.shop-code .container-shop-code h5 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: rgba(0, 0, 0, 0.5490196078);
-  margin-bottom: 8%;
-  text-align: center;
-}
 .shop-code .text-area {
   width: 100%;
   height: 23vh !important;
@@ -520,7 +506,7 @@
 .shop-code button {
   width: 100%;
   margin: 3% 0 3% 0;
-  padding: 2%;
+  padding: 2% !important;
   border-radius: 10px;
   border: 0;
   background-color: #ff3547;
@@ -536,6 +522,76 @@
 
 .medio {
   display: flex;
+  height: 90vh;
+  overflow-y: scroll;
+}
+
+.card-shop {
+  width: 100%;
+  display: flex;
+  border-radius: 20px;
+  align-items: center;
+}
+.card-shop p {
+  width: 100%;
+  margin: 0 !important;
+}
+
+.justify {
+  justify-content: center;
+}
+
+.shop-buttons {
+  width: 100%;
+  text-align: end;
+  justify-content: end;
+  display: flex;
+  align-items: center;
+}
+
+.container-img-shop {
+  width: 100%;
+  margin: auto;
+}
+
+.card-sho {
+  margin: 2%;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0px 4px 16px rgba(43, 52, 69, 0.1);
+  padding: 2%;
+}
+
+.shop-text {
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.shop-amount {
+  color: #ff3547;
+  font-weight: 600;
+}
+
+h5 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 0.5490196078);
+  margin: 2%;
+  text-align: center;
+}
+
+.shop-card-price {
+  color: rgb(125, 135, 156);
+}
+
+.container-shop-code {
+  padding: 7%;
+  width: 100%;
+}
+
+.over {
+  overflow-y: scroll;
 }
 
 .container-details {
@@ -613,6 +669,22 @@
   margin-left: 10%;
   margin-right: 7%;
   width: 50px;
+}
+
+.colored-toast.swal2-icon-success {
+  background-color: #c9c5c2 !important;
+}
+
+.carrito-buy {
+  width: 100%;
+  text-align: center;
+}
+
+.container-carrito-buy {
+  margin: 3%;
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 @media (max-width: 900px) {
