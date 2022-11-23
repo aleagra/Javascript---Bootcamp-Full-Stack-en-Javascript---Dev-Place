@@ -1,0 +1,94 @@
+
+[
+  {
+    "id": "1",
+    "title": "Samsung Galaxy S22",
+    "text": "texta",
+    "price": "$200.000",
+    "img": "https://images.samsung.com/is/image/samsung/p6pim/ar/2208/gallery/ar-galaxy-z-fold4-f936-429925-sm-f936bzamaro-thumb-533083370?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/183269-800-auto?width=800&height=auto&aspect=true"
+  },
+ {
+    "id": "2",
+    "title": "Samsung Galaxy S20 ",
+    "text": "texta",
+    "price": "$150.000",
+  
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/182130-800-auto?width=800&height=auto&aspect=true"
+  },
+  {
+    "id": "3",
+    "title": "Samsung Galaxy A33 ",
+    "text": "texta",
+    "price": "$90.000",
+    "img": "https://images.samsung.com/is/image/samsung/p6pim/ar/galaxy-s21/gallery/ar-galaxy-s21-5g-g991-sm-g991bzvlaro-thumb-368338843?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/184294-800-auto?width=800&height=auto&aspect=true"
+  },
+ {
+    "id": "4",
+    "title": "Samsung Galaxy A53 ",
+    "text": "texta",
+    "price": "$80.000",
+
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/183179-800-auto?width=800&height=auto&aspect=true"
+  },
+ {
+    "id": 5,
+    "title": "Samsung Galaxy A53 ",
+    "text": "texta",
+    "price": "$80.000",
+  
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/177459-800-auto?width=800&height=auto&aspect=true"
+  },
+  {
+    "id": "6",
+    "title": "Samsung Galaxy A53 ",
+    "text": "texta",
+    "price": "$80.000",
+    "img": "https://images.samsung.com/is/image/samsung/p6pim/ar/sm-g781bzrlaro/gallery/ar-galaxy-s20-fe-5g-g781-sm-g781bzrlaro-thumb-532206772?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/182200-800-auto?width=800&height=auto&aspect=true"
+  },
+  {
+    "id": "7",
+    "title": "Samsung Galaxy S22",
+    "text": "texta",
+    "price": "$200.000",
+    "img": "https://images.samsung.com/is/image/samsung/ar-galaxy-s20-fe-g780-sm-g780fzblaro-frontcloudnavy-thumb-308700599?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/177303-800-auto?width=800&height=auto&aspect=true"
+  },
+  {
+    "id": "8",
+    "title": "Samsung Galaxy S20 ",
+    "text": "texta",
+    "price": "$150.000",
+    "img": "https://images.samsung.com/is/image/samsung/p6pim/ar/sm-a045mzkearo/gallery/ar-galaxy-a04-sm-a045-sm-a045mzkearo-thumb-534153880?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/184257-800-auto?width=800&height=auto&aspect=true"
+  },
+  {
+    "id": "9",
+    "title": "Samsung Galaxy A33 ",
+    "text": "texta",
+    "price": "$90.000",
+    "img": "https://images.samsung.com/is/image/samsung/p6pim/ar/2202/gallery/ar-galaxy-a53-5g-a536-sm-a536ezwaaro-thumb-531544723?$160_160_PNG$",
+    "procuto": "celular",
+    "detalle":
+      "https://samsungar.vtexassets.com/arquivos/ids/182130-800-auto?width=800&height=auto&aspect=true"
+  }
+
+]
