@@ -20,8 +20,8 @@ export function Categoria() {
             <Nav.Link className="li-categoria" href="/Televisores">
               Televisores
             </Nav.Link>
-            <Nav.Link className="li-categoria" href="#">
-              Sobre nosotros
+            <Nav.Link className="li-categoria" href="/productos">
+              Ingresar producto
             </Nav.Link>
             <Nav.Link className="li-categoria" href="#">
               Contactanos

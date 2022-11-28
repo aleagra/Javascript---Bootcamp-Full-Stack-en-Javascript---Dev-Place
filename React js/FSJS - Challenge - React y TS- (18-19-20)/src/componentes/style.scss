@@ -425,6 +425,9 @@ $color-price: #dc6657;
   .session-btn {
     width: 60%;
     font-size: 1.3rem;
+    &:hover {
+      border: 1px solid black !important;
+    }
   }
   .btn {
     box-shadow: 0 0px 0px 0 rgb(0 0 0 / 0%) !important;
@@ -683,6 +686,38 @@ h5 {
   display: flex;
   text-align: center;
   justify-content: center;
+}
+// --------------------------INGRESAR PRODUCTO------------------------
+.form-select {
+  padding: 1.5% !important;
+  margin: auto;
+  width: 80% !important;
+}
+.ingresar {
+  padding: 1.5%;
+  width: 80% !important;
+}
+#formFile {
+  width: 80% !important;
+  padding: 1.5% !important;
+}
+.ingresar-title {
+  padding: 0 !important;
+  padding-top: 4% !important;
+  padding-bottom: 4% !important;
+  font-size: 1.5rem !important;
+  font-weight: bold;
+}
+.label-ingresar {
+  font-size: 1rem !important;
+  margin: 2% !important;
+  font-weight: 500;
+}
+.session-btn {
+  font-size: 1rem;
+  &:hover {
+    border: 1px solid black !important;
+  }
 }
 // --------------------------MEDIA------------------------------------
 @media (max-width: 900px) {

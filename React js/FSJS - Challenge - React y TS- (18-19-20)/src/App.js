@@ -16,40 +16,38 @@ import Carrito from "./componentes/pages/Carrito";
 import { CartProvider } from "react-use-cart";
 import { Detalles } from "./componentes/detalles";
 import Search from "./componentes/pages/Search";
+import { Ingresarproducto } from "./componentes/ingresarproducto";
 export const contexto = createContext();
 
 function App() {
-
   return (
-    
     <>
-    <div className="app">
-    <CartProvider>
-      <Appbar />
-      <Categoria />
-      <BrowserRouter>
-     
-          <Routes>  
-            <Route
-              path="/todoslosproductos"
-              element={<Todoslosproductos />}
-            />
-            <Route path="/Celulares" element={<Celulares />} />
-            <Route path="/Tablets" element={<Tablets />} />
-            <Route path="/Televisores" element={<Televisores />} />
-            <Route path="/" element={<Homepage />} />
-            <Route path="/General" element={<General />} />
-            <Route path="/Iniciar Sesion" element={<Sesion />} />
-            <Route path="/Carrito" element={<Carrito />} />
-            <Route path="/Detalles/:id" element={<Detalles/>} />
-            <Route path="/Search/:buscar" element={<Search/>} />
-          </Routes>
-          <Footer />
-      </BrowserRouter>
-      </CartProvider>
-    </div>
-    
-    
+      <div className="app">
+        <CartProvider>
+          <Appbar />
+          <Categoria />
+          <BrowserRouter>
+            <Routes>
+              <Route
+                path="/todoslosproductos"
+                element={<Todoslosproductos />}
+              />
+              <Route path="/Celulares" element={<Celulares />} />
+              <Route path="/Tablets" element={<Tablets />} />
+              <Route path="/Televisores" element={<Televisores />} />
+              <Route path="/Productos" element={<Ingresarproducto />} />
+              <Route path="/" element={<Homepage />} />
+              <Route path="/General" element={<General />} />
+              <Route path="/Iniciar Sesion" element={<Sesion />} />
+              <Route path="/Carrito" element={<Carrito />} />
+              <Route path="/Detalles/:id" element={<Detalles />} />
+              <Route path="/Search/:buscar" element={<Search />} />
+            </Routes>
+
+            <Footer />
+          </BrowserRouter>
+        </CartProvider>
+      </div>
     </>
   );
 }

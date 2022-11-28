@@ -7,7 +7,6 @@ import alldatos from "./data/alldatos";
 import { React, useState } from "react";
 import { useCart } from "react-use-cart";
 import Swal from "sweetalert2";
-import withReactContent from "sweetalert2-react-content";
 export function Cards() {
   return (
     <>
