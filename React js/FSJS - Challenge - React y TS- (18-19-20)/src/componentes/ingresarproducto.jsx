@@ -2,18 +2,24 @@ import React, { useState } from "react";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import { type } from "@testing-library/user-event/dist/type";
+
 const url = "http://localhost:3030/product/post";
 export function Ingresarproducto() {
   const [titulo_producto, setArchivos] = useState("");
   const [precio_producto, setPrecio] = useState("");
-  const [tipo_producto, setProducto] = useState("celular");
+  const [tipo_producto, setProducto] = useState("");
+  const [imagen_producto, setImagen] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const resp = await axios.post(url, {
-        titulo_producto,
-        precio_producto,
-        tipo_producto,
+      var bodyFormData = new FormData();
+      bodyFormData.append("tipo_producto", tipo_producto);
+      bodyFormData.append("precio_producto", precio_producto);
+      bodyFormData.append("titulo_producto", titulo_producto);
+      bodyFormData.append("imagen_producto", imagen_producto[0]);
+      const resp = await axios.post(url, bodyFormData, {
+        headers: { "Content-Type": "multipart/form-data" },
       });
       console.log(resp.data);
     } catch (error) {
@@ -25,10 +31,14 @@ export function Ingresarproducto() {
     <>
       <section className="form center p-0">
         <div className="div-form  ingresar">
-          <div className="">
+          <div>
             <h1 className="ingresar-title">INGRESAR NUEVO PRODUCTO</h1>
           </div>
-          <form className="formulario session" onSubmit={handleSubmit}>
+          <form
+            className="formulario session"
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
+          >
             <MDBRow className="mb-3 center">
               <MDBCol className="text-center">
                 <label className="form-label label-ingresar">
@@ -82,7 +92,10 @@ export function Ingresarproducto() {
                   <Form.Label className="form-label a label-ingresar">
                     IMAGEN DEL PRODUCTO
                   </Form.Label>
-                  <Form.Control type="file" />
+                  <Form.Control
+                    type="file"
+                    onChange={(e) => setImagen(e.target.files)}
+                  />
                 </Form.Group>
               </MDBCol>
             </MDBRow>
@@ -90,7 +103,6 @@ export function Ingresarproducto() {
               <button className="btn session-btn" type="submit">
                 Enviar
               </button>
-              {/* <button onClick={mostrar}>mostrar</button> */}
             </div>
           </form>
         </div>
