@@ -25,8 +25,17 @@ const deleteByProduct = async (req, res) => {
   res.json({ message: "Producto Eliminado" });
 };
 const createProduct = async (req, res) => {
-  const product = new User(req.body);
-  Product.save();
+  const url = req.protocol + "://" + req.get("host");
+  const urlImage = url + "/upload/" + req.file.filename;
+  const modelData = {
+    titulo_producto: req.body.titulo_producto,
+    precio_producto: req.body.precio_producto,
+    imagen_producto: urlImage,
+    texto_producto: req.body.texto_producto,
+  };
+
+  const product = new Product(modelData);
+  product.save();
   res.json(product);
 };
 module.exports = {
