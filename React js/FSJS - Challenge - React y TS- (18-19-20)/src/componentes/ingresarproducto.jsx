@@ -2,22 +2,23 @@ import React, { useState } from "react";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-import { type } from "@testing-library/user-event/dist/type";
 
-const url = "http://localhost:3030/product/post";
+const url = "http://localhost:3030/product";
 export function Ingresarproducto() {
   const [titulo_producto, setArchivos] = useState("");
   const [precio_producto, setPrecio] = useState("");
-  const [tipo_producto, setProducto] = useState("");
   const [imagen_producto, setImagen] = useState("");
+  const [texto_producto, setTexto] = useState("");
+  const [tipo_producto, setProducto] = useState("");
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       var bodyFormData = new FormData();
-      bodyFormData.append("tipo_producto", tipo_producto);
       bodyFormData.append("precio_producto", precio_producto);
       bodyFormData.append("titulo_producto", titulo_producto);
       bodyFormData.append("imagen_producto", imagen_producto[0]);
+      bodyFormData.append("texto_producto", texto_producto);
+      bodyFormData.append("tipo_producto", tipo_producto);
       const resp = await axios.post(url, bodyFormData, {
         headers: { "Content-Type": "multipart/form-data" },
       });
@@ -47,7 +48,6 @@ export function Ingresarproducto() {
                 <input
                   className="form-control ingresar"
                   type="text"
-                  id="titulo_producto"
                   value={titulo_producto}
                   onChange={(e) => setArchivos(e.target.value)}
                 />
@@ -59,7 +59,6 @@ export function Ingresarproducto() {
                 <input
                   className="form-control ingresar"
                   type="text"
-                  id="precio_producto"
                   value={precio_producto}
                   onChange={(e) => setPrecio(e.target.value)}
                 />
@@ -72,18 +71,24 @@ export function Ingresarproducto() {
                 </label>
                 <Form.Select
                   aria-label="Default select example"
-                  id="tipo_producto"
-                  onChange={(e) => {
-                    setProducto(e.target.value);
-                    console.log(tipo_producto);
-                  }}
+                  onChange={(e) => setProducto(e.target.value)}
                 >
-                  <option className="form-label"></option>
-
-                  <option value="Celular">Celular</option>
-                  <option value="Televisor">Televisor</option>
-                  <option value="Tablet">Tablet</option>
+                  <option value=""></option>
+                  <option value="celular">CELULAR</option>
+                  <option value="tablet">TABLET</option>
+                  <option value="televisor">TELEVISOR</option>
                 </Form.Select>
+              </MDBCol>
+            </MDBRow>
+            <MDBRow className="mb-3 center">
+              <MDBCol className="text-center">
+                <label className="form-label label-ingresar">DESCRIPCION</label>
+                <input
+                  className="form-control ingresar"
+                  type="text"
+                  value={texto_producto}
+                  onChange={(e) => setTexto(e.target.value)}
+                />
               </MDBCol>
             </MDBRow>
             <MDBRow className="mb-3 ">

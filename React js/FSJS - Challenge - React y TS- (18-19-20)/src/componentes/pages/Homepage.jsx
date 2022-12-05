@@ -11,10 +11,8 @@ export function Homepage() {
       <Carrousel />
       <Cards />
       <General />
-      <Componentes />
-      <Form />
+
       <Acordeon />
-      
     </>
   );
 }

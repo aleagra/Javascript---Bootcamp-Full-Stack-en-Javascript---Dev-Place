@@ -108,6 +108,33 @@
   height: auto;
 }
 
+.carrousel-cards {
+  margin: 2%;
+  width: 96%;
+}
+.carrousel-cards img {
+  width: 70%;
+  height: auto;
+  margin: auto;
+  max-width: 190px;
+  max-height: 190px;
+  margin-top: 4vw;
+}
+.carrousel-cards .swiper-pagination {
+  margin-top: 2%;
+  position: inherit;
+}
+.carrousel-cards .swiper-button-prev {
+  color: black;
+  top: 40%;
+  left: 0;
+}
+.carrousel-cards .swiper-button-next {
+  color: black;
+  right: 0;
+  top: 40%;
+}
+
 .card-group {
   padding: 32px #f7f7f7;
   margin-top: 2%;
@@ -616,6 +643,7 @@ h5 {
   width: 100%;
   min-width: 300px;
   min-height: auto;
+  max-width: 500px;
 }
 .container-details .container-details-text {
   width: 50%;

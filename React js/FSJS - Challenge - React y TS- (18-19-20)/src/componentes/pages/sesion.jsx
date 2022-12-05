@@ -1,23 +1,26 @@
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
-import React, { useState, useRef } from "react";
+import React, { useState } from "react";
+import axios from "axios";
+const url = "http://localhost:3030/user/login";
 export function Sesion() {
-  const [enviarInfo1, setEnviarInput1] = useState();
-  const [enviarInfo2, setEnviarInput2] = useState();
-  const referenciaInput1 = useRef();
-  const referenciaInput2 = useRef();
+  const [mail, setMail] = useState("");
+  const [password, setPassword] = useState("");
 
-  function enviarDatosInput(e) {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setEnviarInput1(referenciaInput1.current.value);
-    setEnviarInput2(referenciaInput2.current.value);
-  }
-  console.log(enviarInfo1, enviarInfo2);
-  const mostrar = () => {
-    if (enviarInfo1 && enviarInfo2) {
-      alert(enviarInfo1 + "\n" + enviarInfo2);
-    } else alert("Complete ambos campos");
-  };
+    try {
+      var bodyFormData = {
+        mail: mail,
+        password: password,
+      };
 
+      const resp = await axios.post(url, bodyFormData);
+
+      console.log(resp.data);
+    } catch (error) {
+      console.log(error.response);
+    }
+  };
   return (
     <>
       <section className="form center">
@@ -25,14 +28,20 @@ export function Sesion() {
           <div className="container-h1 session-title">
             <h1>INICIAR SESION</h1>
           </div>
-          <form className="formulario session">
+          <form
+            className="formulario session"
+            onSubmit={handleSubmit}
+            encType="multipart/form-data"
+          >
             <MDBRow className="mb-3">
               <MDBCol>
-                <label className="form-label">NOMBRE DE USUARIO</label>
+                <label className="form-label">CORREO ELECTRONICO</label>
                 <input
                   className="form-control"
                   type="text"
-                  ref={referenciaInput2}
+                  id="mail"
+                  value={mail}
+                  onChange={(e) => setMail(e.target.value)}
                 />
               </MDBCol>
             </MDBRow>
@@ -41,21 +50,23 @@ export function Sesion() {
                 <label className="form-label">CONTRASEÑA</label>
                 <input
                   className="form-control"
-                  type="text"
-                  ref={referenciaInput1}
+                  type="password"
+                  id="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                 />
               </MDBCol>
             </MDBRow>
 
             <div className="login">
-              <button className="btn session-btn" onClick={enviarDatosInput}>
+              <button className="btn session-btn" type="submit">
                 Enviar
               </button>
               {/* <button onClick={mostrar}>mostrar</button> */}
             </div>
             <div className="text-center margin">
               <p>
-                No tienes cuenta? <a href="#!">Registrarse</a>
+                No tienes cuenta? <a href="/register">Registrarse</a>
               </p>
               <p>O iniciar con:</p>
 

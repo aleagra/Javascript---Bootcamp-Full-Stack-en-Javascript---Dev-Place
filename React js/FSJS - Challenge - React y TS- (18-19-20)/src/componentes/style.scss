@@ -114,6 +114,32 @@ $color-price: #dc6657;
   height: auto;
 }
 // -----------------------CARROUSEL CARDS-------------------------------
+.carrousel-cards {
+  margin: 2%;
+  width: 96%;
+  img {
+    width: 70%;
+    height: auto;
+    margin: auto;
+    max-width: 190px;
+    max-height: 190px;
+    margin-top: 4vw;
+  }
+  .swiper-pagination {
+    margin-top: 2%;
+    position: inherit;
+  }
+  .swiper-button-prev {
+    color: black;
+    top: 40%;
+    left: 0;
+  }
+  .swiper-button-next {
+    color: black;
+    right: 0;
+    top: 40%;
+  }
+}
 .card-group {
   padding: 32px $color-background;
   margin-top: 2%;
@@ -614,6 +640,7 @@ h5 {
     width: 100%;
     min-width: 300px;
     min-height: auto;
+    max-width: 500px;
   }
   .container-details-text {
     width: 50%;

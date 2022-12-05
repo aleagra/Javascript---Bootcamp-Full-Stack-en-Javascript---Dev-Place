@@ -37,7 +37,6 @@ export function Appbar() {
                 aria-label="Search"
                 placeholder="BUSCAR PRODUCTOS "
               />
-              {console.log(buscar)}
 
               <a href={"/Search/" + buscar}>
                 <button variant="outline-success" class="search">

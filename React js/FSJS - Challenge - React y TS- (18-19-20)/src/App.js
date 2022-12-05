@@ -17,6 +17,8 @@ import { CartProvider } from "react-use-cart";
 import { Detalles } from "./componentes/detalles";
 import Search from "./componentes/pages/Search";
 import { Ingresarproducto } from "./componentes/ingresarproducto";
+import { IngresarUser } from "./componentes/ingresaruser";
+
 export const contexto = createContext();
 
 function App() {
@@ -24,9 +26,9 @@ function App() {
     <>
       <div className="app">
         <CartProvider>
-          <Appbar />
-          <Categoria />
           <BrowserRouter>
+            <Appbar />
+            <Categoria />
             <Routes>
               <Route
                 path="/todoslosproductos"
@@ -35,13 +37,14 @@ function App() {
               <Route path="/Celulares" element={<Celulares />} />
               <Route path="/Tablets" element={<Tablets />} />
               <Route path="/Televisores" element={<Televisores />} />
-              <Route path="/Productos" element={<Ingresarproducto />} />
               <Route path="/" element={<Homepage />} />
               <Route path="/General" element={<General />} />
               <Route path="/Iniciar Sesion" element={<Sesion />} />
               <Route path="/Carrito" element={<Carrito />} />
               <Route path="/Detalles/:id" element={<Detalles />} />
               <Route path="/Search/:buscar" element={<Search />} />
+              <Route path="/Productos" element={<Ingresarproducto />} />
+              <Route path="/Register" element={<IngresarUser />} />
             </Routes>
 
             <Footer />
