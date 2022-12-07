@@ -6,11 +6,20 @@ import Navbar from "react-bootstrap/Navbar";
 import nike from "./img/nike.png";
 import carrito from "./img/carrito.png";
 import Button from "react-bootstrap/Button";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useCart } from "react-use-cart";
 export function Appbar() {
   const [buscar, setBuscar] = useState("");
-  const { totalItems, totalUniqueItems } = useCart();
+  var { totalItems } = useCart();
+  const [user, setUser] = useState(null);
+
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user.data.user);
+    }
+  }, []);
   return (
     <>
       <Navbar
@@ -45,22 +54,21 @@ export function Appbar() {
               </a>
             </div>
             <Nav>
-              <Nav.Link
-                className="login"
-                eventKey={2}
-                href="/iniciar Sesion    "
-              >
-                Iniciar sesion
+              <Nav.Link className="login" eventKey={2} href="/iniciar Sesion">
+                {" "}
+                {user === null ? (
+                  <span>Iniciar Sesion</span>
+                ) : (
+                  <span>{user.nombre}</span>
+                )}
               </Nav.Link>
             </Nav>
             <Nav.Link className="li-logo" href="#features">
               <button className="container-btn-shop">
                 <Button className="btn-carrito" href="/Carrito">
-                  <img className="carrito-icon" src={carrito} alt="" />{" "}
+                  <img className="carrito-icon" src={carrito} alt="" />
                   <span className="shop-contador">
-                    {" "}
-                    {!totalUniqueItems}
-                    {totalItems}
+                    {!user === null ? (totalItems = 0) : totalItems}
                   </span>
                 </Button>
               </button>

@@ -18,6 +18,7 @@ import { Detalles } from "./componentes/detalles";
 import Search from "./componentes/pages/Search";
 import { Ingresarproducto } from "./componentes/ingresarproducto";
 import { IngresarUser } from "./componentes/ingresaruser";
+import Cardform from "./componentes/metodopago";
 
 export const contexto = createContext();
 
@@ -45,6 +46,8 @@ function App() {
               <Route path="/Search/:buscar" element={<Search />} />
               <Route path="/Productos" element={<Ingresarproducto />} />
               <Route path="/Register" element={<IngresarUser />} />
+              <Route path="/Metodo de pago" element={<Cardform />} />
+              Cardform
             </Routes>
 
             <Footer />

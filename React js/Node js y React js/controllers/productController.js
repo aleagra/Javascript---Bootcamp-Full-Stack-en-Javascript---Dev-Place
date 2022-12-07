@@ -25,7 +25,6 @@ const deleteByProduct = async (req, res) => {
   res.json({ message: "Producto Eliminado" });
 };
 const createProduct = async (req, res) => {
-  console.log(req.file);
   const url = req.protocol + "://" + req.get("host");
   const urlImage = url + "/upload/" + req.file.filename;
   const modelData = {

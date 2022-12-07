@@ -26,6 +26,7 @@ export function Cards() {
     }
     productosDB();
   }, []);
+
   return (
     <>
       <Swiper
@@ -133,6 +134,7 @@ export function Cards() {
 }
 
 export default function CrearCard(props) {
+  const [user, setUser] = useState(null);
   const [icon, setIcon] = useState("fas fa-cart-plus fav");
   var contador = 0;
   const item = {
@@ -143,6 +145,13 @@ export default function CrearCard(props) {
     type: props.tipo,
     img: props.imagen,
   };
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user);
+    }
+  }, []);
   function cambiarIcono(e) {
     if (e.target.classList == "fas fa-check") {
       setIcon("fas fa-cart-plus fav");
@@ -169,10 +178,7 @@ export default function CrearCard(props) {
     timerProgressBar: true,
   });
   function alerta() {
-    Toast.fire({
-      icon: "success",
-      title: "Agregado al carrito",
-    });
+    Swal.fire("The Internet?", "That thing is still around?", "question");
   }
   return (
     <>
@@ -189,9 +195,12 @@ export default function CrearCard(props) {
         <button
           className="fav-button"
           onClick={(e) => {
-            console.log(item);
-            cambiarIcono(e);
-            addItem(item);
+            if (user === null) {
+              console.log("error");
+            } else {
+              cambiarIcono(e);
+              addItem(item);
+            }
           }}
         >
           <i className={icon}></i>

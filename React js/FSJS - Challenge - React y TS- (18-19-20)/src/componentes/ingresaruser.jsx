@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
-
+import Swal from "sweetalert2";
 const url = "http://localhost:3030/user/post";
 export function IngresarUser() {
   const [nombre, setNNombre] = useState("");
@@ -27,6 +27,24 @@ export function IngresarUser() {
       console.log(error.response);
     }
   };
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    iconColor: "white",
+    customClass: {
+      popup: "colored-toast",
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  });
+  function alertac() {
+    Swal.fire("Completado", "Usuario creado correctamente", "success");
+  }
+
+  function alertae() {
+    Swal.fire("Error", "nombre o contraseña incorrecto", "error");
+  }
 
   return (
     <>
@@ -45,6 +63,7 @@ export function IngresarUser() {
                   id="nombre"
                   value={nombre}
                   onChange={(e) => setNNombre(e.target.value)}
+                  required
                 />
               </MDBCol>
             </MDBRow>
@@ -57,6 +76,7 @@ export function IngresarUser() {
                   id="mail"
                   value={mail}
                   onChange={(e) => setNMail(e.target.value)}
+                  required
                 />
               </MDBCol>
             </MDBRow>
@@ -70,12 +90,25 @@ export function IngresarUser() {
                   id="password"
                   value={password}
                   onChange={(e) => setNPassword(e.target.value)}
+                  required
                 />
               </MDBCol>
             </MDBRow>
 
             <div className="login">
-              <button className="btn session-btn" type="submit">
+              <button
+                className="btn session-btn"
+                type="submit"
+                onClick={(e) => {
+                  mail &&
+                  mail.lastIndexOf("@") &&
+                  mail.lastIndexOf(".") &&
+                  password &&
+                  nombre
+                    ? alertac()
+                    : alertae();
+                }}
+              >
                 Enviar
               </button>
             </div>

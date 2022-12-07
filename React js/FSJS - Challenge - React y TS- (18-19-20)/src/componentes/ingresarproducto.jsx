@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { MDBCol, MDBRow } from "mdb-react-ui-kit";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const url = "http://localhost:3030/product";
 export function Ingresarproducto() {
@@ -27,7 +28,20 @@ export function Ingresarproducto() {
       console.log(error.response);
     }
   };
-
+  const Toast = Swal.mixin({
+    toast: true,
+    position: "top-right",
+    iconColor: "white",
+    customClass: {
+      popup: "colored-toast",
+    },
+    showConfirmButton: false,
+    timer: 1500,
+    timerProgressBar: true,
+  });
+  function alerta() {
+    Swal.fire("Producto creado correctamente", "", "success");
+  }
   return (
     <>
       <section className="form center p-0">
@@ -105,7 +119,13 @@ export function Ingresarproducto() {
               </MDBCol>
             </MDBRow>
             <div className="login">
-              <button className="btn session-btn" type="submit">
+              <button
+                className="btn session-btn"
+                type="submit"
+                onClick={(e) => {
+                  alerta();
+                }}
+              >
                 Enviar
               </button>
             </div>
