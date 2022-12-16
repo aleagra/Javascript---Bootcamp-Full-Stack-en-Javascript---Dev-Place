@@ -112,19 +112,43 @@ function Cart() {
                             updateItemQuantity(Element.id, Element.quantity + 1)
                           }
                           className="shop-button"
-                          variant="dark"
+                          variant="primary"
                         >
-                          <i class="fas fa-plus"></i>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="white"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M19.5 12h-15"
+                            />
+                          </svg>
                         </Button>
 
                         <Button
                           className="shop-button"
-                          variant="dark"
+                          variant="primary"
                           onClick={() =>
                             updateItemQuantity(Element.id, Element.quantity - 1)
                           }
                         >
-                          <i class="fas fa-minus"></i>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            strokeWidth={1.5}
+                            stroke="white"
+                          >
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              d="M12 4.5v15m7.5-7.5h-15"
+                            />
+                          </svg>
                         </Button>
 
                         <Button
@@ -143,11 +167,9 @@ function Cart() {
           </Row>
         </Container>
       </section>
-      <div className="container-carrito-buy">
-        <Link to="/PaymentMethod" className="carrito-buy">
-          COMPRAR
-        </Link>
-      </div>
+      <Link to="/PaymentMethod" className="carrito-buy">
+        <div className="container-carrito-buy">COMPRAR</div>
+      </Link>
     </>
   );
   return <>{user === null ? console.log("error") : cart()}</>;

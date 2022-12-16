@@ -2,6 +2,7 @@ import Form from "react-bootstrap/Form";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useCart } from "react-use-cart";
+import Button from "react-bootstrap/Button";
 import {
   MDBCard,
   MDBCardBody,
@@ -173,7 +174,9 @@ export default function PaymentMethod() {
                   </MDBCol>
                 </MDBRow>
 
-                <button type="submit">Enviar</button>
+                <Button variant="danger" className="w-100">
+                  FINALIZAR COMPRA
+                </Button>
               </MDBCardBody>
             </form>
           </MDBCard>

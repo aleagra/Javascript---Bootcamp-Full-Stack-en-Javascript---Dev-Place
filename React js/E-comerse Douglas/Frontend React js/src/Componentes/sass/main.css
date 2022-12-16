@@ -5,11 +5,16 @@
   width: 100%;
   padding: 5px 0;
   background-color: #efefef;
+  padding-top: 20px;
   color: rgba(0, 0, 0, 0.5490196078);
 }
 .footer .social {
   text-align: center;
   padding-bottom: 25px;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 5px;
 }
 .footer .social button {
   padding: 15px !important;
@@ -17,7 +22,6 @@
   font-size: 20px;
   text-align: center;
   margin: 0 8px;
-  color: inherit;
 }
 .footer ul {
   font-weight: 600;
@@ -77,6 +81,9 @@
   width: 100%;
   justify-content: space-between !important;
   margin: 0 !important;
+}
+.footer .color {
+  color: white;
 }
 
 .navbar-nav {
@@ -644,8 +651,10 @@
 }
 
 .shop-button {
-  padding: 5% !important;
-  background-color: #5a329d;
+  margin-left: 20px;
+}
+.shop-button svg {
+  width: 16px;
 }
 
 .shop-code {
@@ -760,11 +769,14 @@ h5 {
   width: 55%;
   padding: 1%;
   margin: auto;
+  margin-top: 2%;
   margin-bottom: 4%;
   text-align: center;
   background-color: #f24a2e;
   cursor: pointer;
+  justify-content: center;
   border-radius: 20px;
+  color: white;
 }
 .container-carrito-buy .carrito-buy {
   text-align: center;
@@ -774,9 +786,54 @@ h5 {
   color: white;
 }
 
+.section-acordeon {
+  margin: auto;
+  height: 50vh;
+  max-width: 87%;
+}
+.section-acordeon .acordeon-item {
+  font-size: 1rem !important;
+  border: 0;
+  border-bottom: 1px solid #7288a2;
+}
+.section-acordeon button {
+  margin: 10px 0 0 10px;
+  color: #7288a2;
+  font-size: 1.5rem;
+  font-weight: 300;
+  outline: none;
+}
+.section-acordeon button:focus {
+  background-color: transparent;
+  color: #000;
+}
+.section-acordeon button:active {
+  background-color: transparent;
+  color: #000;
+}
+.section-acordeon .accordion-header {
+  border: 0 !important;
+}
+.section-acordeon .accordion-button:not(.collapsed) {
+  background-color: transparent;
+  color: #000;
+  font-weight: bold;
+}
+.section-acordeon .acordeon-title {
+  padding-bottom: 1rem;
+}
+.section-acordeon .acordeon-title h4 {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
 * {
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+}
+
+svg {
+  width: 24px;
 }
 
 .btn {

@@ -6,7 +6,7 @@ import { Appbar } from "./Componentes/Navbar";
 import { Login } from "./Componentes/Login";
 import { Register } from "./Componentes/Register";
 import Cart from "./Componentes/Cart";
-import PaymentMethod from "./Componentes/metodopago";
+import PaymentMethod from "./Componentes/PaymentMethod";
 import { ListProducts } from "./Componentes/ListProducts";
 import { Ingresarproducto } from "./Componentes/ingresarProducto";
 import { AllProducts } from "./Componentes/AllProducts";
