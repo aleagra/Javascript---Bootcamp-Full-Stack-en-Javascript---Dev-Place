@@ -20,9 +20,11 @@
     background-color: #efefef;
     max-width: 600px;
     margin: auto;
+
     .container-label {
       border-bottom: 1px solid black;
     }
+
     label {
       width: 100%;
       display: flex;
@@ -51,7 +53,6 @@
   button {
     width: 100%;
     padding: 4%;
-    background-color: black;
     margin: 0;
     color: white;
     border-radius: 20px;
