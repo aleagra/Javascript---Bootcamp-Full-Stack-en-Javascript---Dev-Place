@@ -1,0 +1,95 @@
+.ingresar {
+  display: flex;
+  margin: auto;
+
+  max-width: 1000px;
+  .row {
+    display: flex;
+    margin: auto;
+  }
+
+  .container-ingresar {
+    margin: 8%;
+    padding: 5%;
+    width: 100%;
+    background-color: #efefef;
+    border-radius: 20px;
+  }
+  h1 {
+    color: black;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-left: 1%;
+    margin-bottom: 6%;
+  }
+
+  label {
+    text-align: left;
+    font-weight: 500;
+  }
+  input {
+    background: rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 0;
+    padding: 2%;
+    &:focus {
+      outline: none;
+    }
+    &:active {
+      outline: none;
+      border: 0;
+    }
+  }
+  .login {
+    display: flex;
+    margin: auto;
+    width: 100%;
+  }
+  button {
+    margin-top: 4%;
+    margin-bottom: 4%;
+    width: 100%;
+    margin-right: 10px;
+    margin-left: 10px;
+    padding: 3%;
+    border-radius: 20px;
+    background-color: black;
+    color: white;
+    border: 1px solid transparent;
+    &:hover {
+      border: 1px solid black;
+      background-color: white;
+      color: #000;
+    }
+  }
+  select {
+    padding: 2%;
+    background-color: rgba(0, 0, 0, 0.1);
+    outline: none;
+    border: 0;
+  }
+  .btn {
+    width: 10%;
+    background-color: #000;
+    border-radius: 50%;
+  }
+  .register {
+    color: #212529;
+
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-transform: uppercase;
+  }
+  a {
+    color: #212529;
+    opacity: 0.5;
+    text-decoration: underline;
+    &:hover {
+      opacity: 1;
+    }
+    span {
+      margin: 3px;
+    }
+  }
+}

@@ -36,7 +36,7 @@ export function Cards() {
         loop={true}
         loopFillGroupWithBlank={true}
         pagination={{
-          type: "fraction",
+          type: "success",
         }}
         navigation={true}
         modules={[Pagination, Navigation]}
@@ -46,6 +46,7 @@ export function Cards() {
           return (
             <SwiperSlide>
               <CrearCard
+                className="carrousel-card"
                 id={Element._id}
                 titulo={Element.titulo_producto}
                 imagen={Element.imagen_producto}
@@ -82,7 +83,7 @@ export function Cards() {
               </Row>
             </CardGroup>
           </Carousel.Item>
-
+ console.log(detalles[0].user);
           <Carousel.Item>
             <CardGroup className="card-group">
               <Row>
@@ -159,7 +160,7 @@ export default function CrearCard(props) {
       contador = contador + 1;
     } else {
       setIcon("fas fa-check");
-      alerta();
+
       contador = contador - 1;
     }
     console.log(contador);
@@ -178,32 +179,38 @@ export default function CrearCard(props) {
     timerProgressBar: true,
   });
   function alerta() {
-    Swal.fire("The Internet?", "That thing is still around?", "question");
+    Swal.fire("Completado?", "El producto fue agregado al carrito", "success");
   }
   return (
     <>
-      <Card className="text-center card col" tipo={props.tipo_producto}>
+      <Card className=" card col" tipo={props.tipo_producto}>
         <a href={"/Detalles/" + props.id}>
           {" "}
           <Card.Img src={props.imagen} alt="logo" />
         </a>
         <Card.Body>
           <Card.Title> {props.titulo}</Card.Title>
-          <Card.Text>{props.texto}</Card.Text>
-          <Card.Title className="price">$ {props.precio}</Card.Title>
+
+          <Card.Title className="price">${props.precio}</Card.Title>
         </Card.Body>
+
         <button
           className="fav-button"
           onClick={(e) => {
             if (user === null) {
-              console.log("error");
+              window.location.href = "/iniciar sesion";
             } else {
               cambiarIcono(e);
               addItem(item);
             }
           }}
         >
-          <i className={icon}></i>
+          {" "}
+          <div className="cart">
+            <i className={icon}>
+              <span> AÑADIR AL CARRITO</span>
+            </i>
+          </div>
         </button>
       </Card>
     </>

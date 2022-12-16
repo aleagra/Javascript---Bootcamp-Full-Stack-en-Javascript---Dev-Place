@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Swal from "sweetalert2";
 import { useCart } from "react-use-cart";
+import { Form } from "react-bootstrap";
 const url = "http://localhost:3030/user/login";
 export function Sesion() {
   const [mail, setMail] = useState("");
@@ -21,6 +22,7 @@ export function Sesion() {
       setUser(user.data.user);
       setMail("");
       setPassword("");
+      window.location.href = "/";
     } catch (exception) {
       console.log("Error al loguearse");
     }
@@ -85,24 +87,26 @@ export function Sesion() {
   function alerta() {
     Swal.fire("Completado", "Usuario creado correctamente", "success");
   }
+
   const loginForm = () => (
-    <section className="form center">
-      <div className="div-form sesion">
-        <div className="container-h1 session-title">
-          <h1>INICIAR SESION</h1>
+    <section className="ingresar p-0">
+      <div className="container-ingresar">
+        <div>
+          <h1 className="ingresar-title">INICIAR SESION</h1>
         </div>
         <form
           className="formulario session"
           onSubmit={handleSubmit}
           encType="multipart/form-data"
         >
-          <MDBRow className="mb-3">
-            <MDBCol>
-              <label className="form-label">CORREO ELECTRONICO</label>
+          <MDBRow className="mb-3 ">
+            <MDBCol WS>
+              <label className="form-label label-ingresar">
+                CORREO ELECTRONICO
+              </label>
               <input
-                className="form-control"
-                type="text"
-                id="mail"
+                className="form-control ingresar"
+                type="mail"
                 value={mail}
                 onChange={(e) => setMail(e.target.value)}
               />
@@ -110,11 +114,10 @@ export function Sesion() {
           </MDBRow>
           <MDBRow className="mb-3 ">
             <MDBCol>
-              <label className="form-label">CONTRASEÑA</label>
+              <label className="form-label label-ingresar">CONTRASEÑA</label>
               <input
-                className="form-control"
+                className="form-control ingresar"
                 type="password"
-                id="password"
                 value={password}
                 onChange={(e) => {
                   setPassword(e.target.value);
@@ -123,20 +126,19 @@ export function Sesion() {
             </MDBCol>
           </MDBRow>
 
-          <div className="login">
-            <a href="/">
-              {" "}
-              <button className="btn" onClick={hadndleLogout}>
-                iniciar sesion
-              </button>
-            </a>
-            {/* <button onClick={mostrar}>mostrar</button> */}
+          <div>
+            <button className=" session-btn" onClick={hadndleLogout}>
+              iniciar sesion
+            </button>
           </div>
-          <div className="text-center margin">
+          <div className="text-center register">
             <p>
-              No tienes cuenta? <a href="/register">Registrarse</a>
+              No tienes cuenta?{" "}
+              <span>
+                <a href="/register">Registrarse </a>
+              </span>
+              O iniciar con:
             </p>
-            <p>O iniciar con:</p>
 
             <button className="btn">
               <i class="fab fa-google"></i>
@@ -155,10 +157,9 @@ export function Sesion() {
       </div>
     </section>
   );
-
   const logoutForm = () => (
-    <section className="form center">
-      <div className="div-form sesion">
+    <section className="login">
+      <div className="container-login">
         <div className="container-h1 session-title"></div>
         <form
           className="formulario session"
@@ -167,21 +168,33 @@ export function Sesion() {
         >
           <MDBRow className="mb-3">
             <MDBCol>
-              <label className="form-label">
-                mail: <span>{user.mail}</span>
-              </label>
-
-              <label className="form-label " type="password">
-                Nombre de usuario : <span>{user.nombre}</span>
-              </label>
+              <div className="container-label">
+                <label className="form-label">
+                  Correo electronico: <span>{user.mail}</span>
+                </label>
+              </div>
+              <div className="container-label">
+                <label className="form-label " type="password">
+                  Nombre de usuario : <span>{user.nombre}</span>
+                </label>
+              </div>
             </MDBCol>
           </MDBRow>
 
-          <div className="login">
+          <div className="login-btn">
             <a href="/Iniciar Sesion">
               {" "}
               <button className="btn" onClick={hadndleLogout}>
                 cerrar sesion
+              </button>
+            </a>
+            {/* <button onClick={mostrar}>mostrar</button> */}
+          </div>
+          <div className="login-btn">
+            <a href="/Detalles de compra">
+              {" "}
+              <button className="btn" onClick={hadndleLogout}>
+                Ver detalles de compras
               </button>
             </a>
             {/* <button onClick={mostrar}>mostrar</button> */}

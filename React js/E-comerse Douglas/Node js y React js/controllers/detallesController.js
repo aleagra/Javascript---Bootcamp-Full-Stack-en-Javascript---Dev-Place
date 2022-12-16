@@ -35,6 +35,8 @@ const createDetail = async (req, res) => {
     codigo: req.body.codigo,
     expiracion: req.body.expiracion,
     user: req.body.user,
+    product: req.body.product,
+    total: req.body.total,
   };
 
   const detail = new Detail(modelData);

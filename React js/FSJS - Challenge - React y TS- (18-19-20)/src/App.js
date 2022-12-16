@@ -19,7 +19,7 @@ import Search from "./componentes/pages/Search";
 import { Ingresarproducto } from "./componentes/ingresarproducto";
 import { IngresarUser } from "./componentes/ingresaruser";
 import Cardform from "./componentes/metodopago";
-
+import DetallesCompra from "./componentes/detallesCompra";
 export const contexto = createContext();
 
 function App() {
@@ -29,7 +29,7 @@ function App() {
         <CartProvider>
           <BrowserRouter>
             <Appbar />
-            <Categoria />
+
             <Routes>
               <Route
                 path="/todoslosproductos"
@@ -47,6 +47,7 @@ function App() {
               <Route path="/Productos" element={<Ingresarproducto />} />
               <Route path="/Register" element={<IngresarUser />} />
               <Route path="/Metodo de pago" element={<Cardform />} />
+              <Route path="/Detalles de compra" element={<DetallesCompra />} />
               Cardform
             </Routes>
 

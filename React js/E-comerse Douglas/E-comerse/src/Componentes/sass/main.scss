@@ -1,0 +1,26 @@
+@import "./acordeon";
+@import "./navbar";
+@import "./carrousel";
+@import "./login";
+@import "./carrouselCards";
+@import "./ingresarProducto";
+@import "./details";
+@import "./cart";
+
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&family=Roboto:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap");
+$color-background: #f7f7f7;
+$color-navbar: #c9c5c2;
+$color-price: #dc6657;
+* {
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+.btn {
+  box-shadow: 0 0px 0px 0 rgb(0 0 0 / 0%) !important;
+  border: 0;
+}
+a {
+  text-decoration: none;
+}

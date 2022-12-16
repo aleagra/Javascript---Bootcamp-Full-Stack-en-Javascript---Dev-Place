@@ -4,6 +4,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import CrearCard from "../Carrousel-cards";
 import axios from "axios";
+import { Categoria } from "../Nav-categoria";
 export function Todoslosproductos() {
   const [products, setProducts] = useState([]);
 
@@ -17,11 +18,12 @@ export function Todoslosproductos() {
   console.log(products);
   return (
     <>
+      <Categoria />
       <section className="carrousel-card">
         <CardGroup className="card-group">
           <Row>
             {products.map((Element) => (
-              <Col lg={4} sm={6} xl={2}>
+              <Col lg={4} sm={6} xl={3}>
                 <CrearCard
                   id={Element._id}
                   key={Element.tipo_producto}

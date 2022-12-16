@@ -1,7 +1,8 @@
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
+import { useCart } from "react-use-cart";
 import {
   MDBCard,
   MDBCardBody,
@@ -16,6 +17,9 @@ import {
 const url = "http://localhost:3030/detail";
 
 export default function Cardform() {
+  const { cartTotal } = useCart();
+  const [user, setUser] = useState(null);
+  const [product, setProduct] = useState([]);
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [direccion, setDireecion] = useState("");
@@ -26,11 +30,28 @@ export default function Cardform() {
   const [codigo, setCodigo] = useState("");
   const [expiracion, setExpiracion] = useState("");
 
+  useEffect(() => {
+    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
+    if (loggedUserJSON) {
+      const user = JSON.parse(loggedUserJSON);
+      setUser(user.data.user);
+    }
+  }, []);
+  useEffect(() => {
+    const carrito = window.localStorage.getItem("react-use-cart");
+
+    const product = JSON.parse(carrito);
+    setProduct(product.items);
+  }, []);
+  console.log(product);
+  console.log(user);
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
       var detail = {
+        product: product,
+        user: user,
         nombre: nombre,
         apellido: apellido,
         direccion: direccion,
@@ -40,6 +61,7 @@ export default function Cardform() {
         nombre_tarjeta: nombre_tarjeta,
         codigo: codigo,
         expiracion: expiracion,
+        total: cartTotal,
       };
 
       const resp = await axios.post(url, detail, {
@@ -166,7 +188,7 @@ export default function Cardform() {
               <MDBListGroup flush>
                 <MDBListGroupItem className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                   Productos
-                  <span>$53.98</span>
+                  <span>${cartTotal}</span>
                 </MDBListGroupItem>
                 <MDBListGroupItem className="d-flex justify-content-between align-items-center border-0 px-0 pb-0">
                   Envio
@@ -181,7 +203,7 @@ export default function Cardform() {
                     </strong>
                   </div>
                   <span>
-                    <strong>$53.98</strong>
+                    <strong>${cartTotal}</strong>
                   </span>
                 </MDBListGroupItem>
               </MDBListGroup>

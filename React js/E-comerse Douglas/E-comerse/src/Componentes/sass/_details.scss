@@ -1,0 +1,57 @@
+.container-details {
+  margin: 0 !important;
+  .row {
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  .row > * {
+    padding: 0 !important;
+    display: flex;
+    align-items: center;
+  }
+  width: 100%;
+
+  img {
+    width: 100%;
+    max-width: 1000px;
+  }
+  .details {
+    margin: 5%;
+    text-align: left;
+
+    .details-title {
+      font-weight: 500;
+      font-size: 2rem;
+      padding: 2% 0 2% 0%;
+    }
+    .details-price {
+      padding: 2% 0 2% 0%;
+      font-size: 1.4rem;
+    }
+    p {
+      width: 80%;
+      font-size: 1.3rem;
+      padding: 2% 0 2% 0%;
+      margin: 2% 0 2% 0;
+    }
+    button {
+      padding: 1.5%;
+      border: 0;
+      background-color: #000;
+      color: white;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 2%;
+    }
+  }
+}
+.py-5 {
+  .card-body {
+    text-transform: uppercase;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+    text-align: center;
+    color: #0000008c;
+  }
+}

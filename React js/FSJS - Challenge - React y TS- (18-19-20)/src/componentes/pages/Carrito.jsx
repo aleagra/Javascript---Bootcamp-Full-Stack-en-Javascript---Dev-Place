@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
 import Swal from "sweetalert2";
+import { Link } from "react-router-dom";
 function Carrito() {
   const [user, setUser] = useState(null);
   const {
@@ -143,42 +144,34 @@ function Carrito() {
 
           {/* <section className="shop-code">
       <div className="container-shop-code">
-        <h5 className="shop-comentario">DETALLES</h5>
-        <FloatingLabel
-          controlId="floatingTextarea"
-          label="Comentario adicional"
-          className="mb-3"
-        >
-          <Form.Control as="textarea" className="text-area" />
-        </FloatingLabel>
-        <FloatingLabel
-          controlId="floatingInput"
-          label="Ingrese codigo postal"
-          className="mb-3 post-code"
-        >
-          <Form.Control type="email" placeholder="name@example.com" />
-        </FloatingLabel>
-
-        <button>CALCULAR ENVIO</button>
+      <h5 className="shop-comentario">DETALLES</h5>
+      <FloatingLabel
+      controlId="floatingTextarea"
+      label="Comentario adicional"
+      className="mb-3"
+      >
+      <Form.Control as="textarea" className="text-area" />
+      </FloatingLabel>
+      <FloatingLabel
+      controlId="floatingInput"
+      label="Ingrese codigo postal"
+      className="mb-3 post-code"
+      >
+      <Form.Control type="email" placeholder="name@example.com" />
+      </FloatingLabel>
+      
+      <button>CALCULAR ENVIO</button>
       </div>
     </section> */}
         </Container>
       </section>
+      <div className="container-carrito-buy">
+        <Link to="/metodo de pago" className="carrito-buy">
+          COMPRAR
+        </Link>
+      </div>
     </>
   );
   return <>{user === null ? console.log("error") : carrito()}</>;
 }
 export default Carrito;
-
-// <div className="container-carrito-buy">
-//   <Button
-//     href="/metodo de pago"
-//     variant="danger"
-//     className="carrito-buy"
-//     onClick={(e) => {
-//       alerta();
-//     }}
-//   >
-//     COMPRAR
-//   </Button>
-// </div>;

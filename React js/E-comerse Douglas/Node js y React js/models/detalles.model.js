@@ -13,11 +13,13 @@ const UsersSchema = new Schema({
   nombre_tarjeta: { type: String },
   codigo: { type: String },
   expiracion: { type: String },
+  total: { type: String },
   status: {
     type: Boolean,
     default: true,
   },
   user: { type: mongoose.Schema.Types.ObjectId, ref: "users" },
+  product: { type: mongoose.Schema.Types.Array, ref: "products" },
 });
 
 const Detail = mongoose.model("detail", UsersSchema);

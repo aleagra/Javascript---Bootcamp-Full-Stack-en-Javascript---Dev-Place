@@ -1,0 +1,101 @@
+.carrousel-cards {
+  margin: 2%;
+  width: 96%;
+  height: 70vh;
+  display: flex;
+  align-items: center;
+
+  .swiper-pagination {
+    margin-top: 2%;
+    position: inherit;
+  }
+  .swiper-button-prev {
+    color: black;
+    top: 45%;
+    left: 0;
+  }
+  .swiper-button-next {
+    color: black;
+    right: 0;
+    top: 45%;
+  }
+}
+.row > * {
+  padding: 10px 10px 10px 10px;
+}
+.card-group {
+  min-height: 80vh;
+  justify-content: center;
+  .card {
+    background-color: #efefef;
+    display: flex;
+    padding-right: 1px !important;
+    box-shadow: 0 0px 0px 0 rgb(0 0 0 / 0%) !important;
+    border: 1px solid white;
+
+    font-size: 1rem;
+    .h5 {
+      font-size: 1rem !important;
+      font-weight: 500 !important;
+    }
+  }
+}
+.carrousel-cards {
+  .card-body {
+    position: relative;
+  }
+  .h5 {
+    font-size: 0.7rem !important;
+  }
+}
+.card-body {
+  text-transform: uppercase;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  color: #0000008c;
+}
+.row {
+  width: 100%;
+  margin: 2%;
+  justify-content: center;
+}
+.carousel-indicators {
+  margin-bottom: 0 !important;
+}
+.carousel-control-next,
+.carousel-control-prev {
+  width: 5%;
+}
+.fa-heart {
+  color: #dc6657;
+}
+.card:hover {
+  .fav-button {
+    color: black;
+    background-color: white;
+  }
+}
+.fav-button {
+  justify-content: center;
+  width: 100%;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  color: transparent;
+
+  span {
+    font-weight: 500;
+  }
+}
+.cart {
+  margin: 2%;
+  text-align: center;
+  padding: 7%;
+  margin: auto;
+}
+.swiper-slide {
+  display: flex;
+  align-items: center;
+}
