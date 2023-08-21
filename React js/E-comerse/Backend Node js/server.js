@@ -9,11 +9,18 @@ const detailRouter = require("./routes/detalles.route");
 const mongose = require("mongoose");
 var cors = require("cors");
 app.use(cors());
+const urlConexionMongo = process.env.LOCALHOST;
+
 mongose
-  .connect(puertoMongo)
-  .then(() => console.log("Conect MongoDB"))
+  .connect(urlConexionMongo, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
+  .then(() => {
+    console.log("DB Connection Successful");
+  })
   .catch((err) => {
-    console.error(err);
+    console.log(err.message);
   });
 
 app.use(express.json());

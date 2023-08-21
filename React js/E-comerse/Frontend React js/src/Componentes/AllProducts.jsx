@@ -16,6 +16,22 @@ export function AllProducts() {
     productosDB();
   }, []);
   console.log(products);
+
+  const options = {
+    method: "GET",
+    url: "https://shoes-collections.p.rapidapi.com/shoes",
+    headers: {
+      "X-RapidAPI-Key": "285c59d0b8msh46372bba5f66c71p1194bbjsn26a8dd6a017b",
+      "X-RapidAPI-Host": "shoes-collections.p.rapidapi.com",
+    },
+  };
+
+  try {
+    const response = axios.request(options);
+    console.log(response.data);
+  } catch (error) {
+    console.error(error);
+  }
   return (
     <>
       <ListProducts />
