@@ -13,7 +13,7 @@ routerproduct.get("/product", getProduct);
 
 routerproduct.post(
   "/product",
-  uploadMulter.single("imagen_producto"),
+  uploadMulter.single("img"),
   createProduct
 );
 

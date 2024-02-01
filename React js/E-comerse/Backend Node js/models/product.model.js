@@ -4,16 +4,15 @@ const Schema = mongoose.Schema;
 const Joi = require("joi");
 
 const UsersSchema = new Schema({
-  titulo_producto: {
+  title: {
     type: String,
   },
-  precio_producto: {
+  price: {
     type: String,
-    unique: true,
   },
-  imagen_producto: { type: String },
-  texto_producto: { type: String },
-  tipo_producto: { type: String },
+  img: { type: String },
+  description: { type: String },
+  brand: { type: String },
   status: {
     type: Boolean,
     default: true,

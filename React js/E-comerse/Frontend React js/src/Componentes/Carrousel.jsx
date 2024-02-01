@@ -5,9 +5,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 export function Carrousel() {
-  return (
-    <>
-      <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+  return {
+    /* <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
           <img
             className="img"
@@ -30,6 +29,6 @@ export function Carrousel() {
           />
         </SwiperSlide>
       </Swiper>
-    </>
-  );
+    </> */
+  };
 }

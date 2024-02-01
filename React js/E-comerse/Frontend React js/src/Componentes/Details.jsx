@@ -10,20 +10,20 @@ export function Details() {
   const [product, setProduct] = useState([]);
   let params = useParams();
   let elemento = params.id;
-  useEffect(() => {
-    async function productosDB() {
-      const res = await axios.get(`http://localhost:3030/product/${elemento}`);
-      setProduct(res.data);
-    }
-    productosDB();
-  }, [elemento]);
-  useEffect(() => {
-    const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
-    if (loggedUserJSON) {
-      const user = JSON.parse(loggedUserJSON);
-      setUser(user);
-    }
-  }, []);
+  // useEffect(() => {
+  //   async function productosDB() {
+  //     const res = await axios.get(`http://localhost:3030/product/${elemento}`);
+  //     setProduct(res.data);
+  //   }
+  //   productosDB();
+  // }, [elemento]);
+  // useEffect(() => {
+  //   const loggedUserJSON = window.localStorage.getItem("loggedNoteappUser");
+  //   if (loggedUserJSON) {
+  //     const user = JSON.parse(loggedUserJSON);
+  //     setUser(user);
+  //   }
+  // }, []);
   const item = {
     id: product._id,
     title: product.titulo_producto,

@@ -3,7 +3,6 @@ const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
 const login = async (req, res) => {
-  console.log(req.body);
   User.findOne({
     mail: req.body.mail,
   }).then((user) => {
@@ -26,4 +25,5 @@ const login = async (req, res) => {
     });
   });
 };
+
 module.exports = login;

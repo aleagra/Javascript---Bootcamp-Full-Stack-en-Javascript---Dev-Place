@@ -28,11 +28,11 @@ const createProduct = async (req, res) => {
   const url = req.protocol + "://" + req.get("host");
   const urlImage = url + "/upload/" + req.file.filename;
   const modelData = {
-    titulo_producto: req.body.titulo_producto,
-    precio_producto: req.body.precio_producto,
-    imagen_producto: urlImage,
-    texto_producto: req.body.texto_producto,
-    tipo_producto: req.body.tipo_producto,
+    title: req.body.title,
+    price: req.body.price,
+    img: urlImage,
+    description: req.body.description,
+    brand: req.body.brand,
   };
 
   const product = new Product(modelData);

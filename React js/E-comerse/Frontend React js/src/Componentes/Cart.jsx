@@ -4,7 +4,6 @@ import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import { Row } from "react-bootstrap";
 import Col from "react-bootstrap/Col";
-import Swal from "sweetalert2";
 import { Link } from "react-router-dom";
 function Cart() {
   const [user, setUser] = useState(null);
@@ -31,43 +30,6 @@ function Cart() {
         <h1> EL CARRITO ESTA VACIO </h1>
       </div>
     );
-  const swalWithBootstrapButtons = Swal.mixin({
-    customClass: {
-      confirmButton: "btn btn-success",
-      cancelButton: "btn btn-danger",
-    },
-    buttonsStyling: false,
-  });
-  function alerta() {
-    swalWithBootstrapButtons
-      .fire({
-        title: "Estas seguro?",
-        text: "No se puede revertir",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonText: "Si, comprar",
-        cancelButtonText: "No, cancelar",
-        reverseButtons: true,
-      })
-      .then((result) => {
-        if (result.isConfirmed) {
-          swalWithBootstrapButtons.fire(
-            "Completado",
-            "Compra realizada",
-            "success"
-          );
-        } else if (
-          /* Read more about handling dismissals below */
-          result.dismiss === Swal.DismissReason.cancel
-        ) {
-          swalWithBootstrapButtons.fire(
-            "Cancelled",
-            "Operacion cancelada",
-            "error"
-          );
-        }
-      });
-  }
 
   const cart = () => (
     <>

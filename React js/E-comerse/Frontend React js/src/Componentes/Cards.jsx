@@ -21,7 +21,7 @@ export function Cards() {
 
   return (
     <>
-      <Swiper
+      {/* <Swiper
         slidesPerView={6}
         spaceBetween={30}
         slidesPerGroup={6}
@@ -49,7 +49,7 @@ export function Cards() {
             </SwiperSlide>
           );
         })}
-      </Swiper>
+      </Swiper> */}
     </>
   );
 }
@@ -83,24 +83,20 @@ export default function CrearCard(props) {
 
       contador = contador - 1;
     }
-    console.log(contador);
   }
 
   const { addItem } = useCart();
-  const Toast = Swal.mixin({
-    toast: true,
-    position: "top-right",
-    iconColor: "white",
-    customClass: {
-      popup: "colored-toast",
-    },
-    showConfirmButton: false,
-    timer: 1500,
-    timerProgressBar: true,
-  });
-  function alerta() {
-    Swal.fire("Completado?", "El producto fue agregado al carrito", "success");
-  }
+  // const Toast = Swal.mixin({
+  //   toast: true,
+  //   position: "top-right",
+  //   iconColor: "white",
+  //   customClass: {
+  //     popup: "colored-toast",
+  //   },
+  //   showConfirmButton: false,
+  //   timer: 1500,
+  //   timerProgressBar: true,
+  // });
   return (
     <>
       <Card className=" card col" tipo={props.tipo_producto}>
@@ -125,11 +121,8 @@ export default function CrearCard(props) {
             }
           }}
         >
-          {" "}
           <div className="cart">
-            <i className={icon}>
-              <span> AÑADIR AL CARRITO</span>
-            </i>
+            <span> AÑADIR AL CARRITO</span>
           </div>
         </button>
       </Card>

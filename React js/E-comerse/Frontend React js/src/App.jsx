@@ -1,7 +1,7 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import { CartProvider } from "react-use-cart";
 import { Homepage } from "./Componentes/Homepage";
-import { Footer } from "./Componentes/Footer";
+
 import { Appbar } from "./Componentes/Navbar";
 import { Login } from "./Componentes/Login";
 import { Register } from "./Componentes/Register";
@@ -35,7 +35,7 @@ function App() {
             <Route path="/Jeans" element={<Jeans />} />
             <Route path="/Details/:id" element={<Details />} />
           </Routes>
-          <Footer />
+          {/* <Footer /> */}
         </BrowserRouter>
       </CartProvider>
     </div>
